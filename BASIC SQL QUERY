@@ -13,3 +13,21 @@ SELECT FirstName , Lastname
 FROM EmployeeDemographics
 
 -- You can select spesific column for basic filtration and sorting
+
+SELECT Distinct (EmployeeID)
+FROM EmployeeDemographics
+
+-- The SELECT DISTINCT statement is used to retrieve unique values from a specified column in a database table. 
+-- When you apply DISTINCT to a column, it filters out duplicate values, ensuring that each value in the result set is unique.
+
+SELECT MAX(Salary)
+FROM EmployeeSalary
+
+SELECT MIN(Salary)
+FROM EmployeeSalary
+
+SELECT AVG(Salary)
+FROM EmployeeSalary
+
+-- Aggregate Functions: MAX, MIN, and AVG are SQL aggregate functions used with the SELECT statement to perform calculations on numeric data.
+
