@@ -1,24 +1,25 @@
 -- Create the EmployeeDemographics table
+-- The EmployeeID column is of type "int" means an integer a whole number (not a fractional number) that can be positive, negative, or zero.
+-- Columns are of type varchar(50), allowing up to 50 characters.
 
 CREATE TABLE EmployeeDemographics 
-(
-EmployeeID int, -- The EmployeeID column is of type "int" means an integer a whole number (not a fractional number) that can be positive, negative, or zero.
-FirstName varchar(50), -- columns are of type varchar(50), allowing up to 50 characters.
+(EmployeeID int, 
+FirstName varchar(50), 
 LastName varchar(50),
 Age int,
-Gender varchar(50)
-);
+Gender varchar(50))
 
 -- Create the EmployeeSalary table
+
 CREATE TABLE EmployeeSalary
-(
-EmployeeID int,
+(EmployeeID int,
 Jobtitle varchar(50),
-Salary int
-);
+Salary int)
 
 -- Insert a record into the EmployeeDemographics table
-Insert into EmployeeDemographics Values -- "Values" means inserting inside the table e.g (EmployeeID, FirstName, LastName, Age, Gender)
+-- "Values" means inserting inside the table e.g (EmployeeID, FirstName, LastName, Age, Gender)
+
+Insert into EmployeeDemographics Values 
 (1001, 'John', 'Cardona', 26, 'Male'),
 (1002, 'Pam', 'Beasley', 30, 'Female'),
 (1003, 'Dwight', 'Schrute', 29, 'Male'),
@@ -30,6 +31,7 @@ Insert into EmployeeDemographics Values -- "Values" means inserting inside the t
 (1009, 'Kevin', 'Malone', 31, 'Male')
 
 -- Insert a record into the EmployeeSalary table
+
 Insert into EmployeeSalary values 
 (1001, 'Salesman', 45000),
 (1002, 'Receptionist', 36000),
