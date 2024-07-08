@@ -1,1 +1,13 @@
+-- Finding Rows with Missing Values
 
+SELECT *
+FROM EmployeeDemographics
+WHERE Age IS NULL;
+
+-- Replace NULL values with a desired value
+
+UPDATE EmployeeDemographics
+SET Age = 'n/a'
+WHERE Age IS NULL;
+
+-
