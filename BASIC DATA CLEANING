@@ -1,4 +1,5 @@
---Remove duplicate rows. This query removes duplicate rows from the Employee table by keeping only the row with the minimum row ID for each group of duplicate record
+--Remove duplicate rows. 
+--This query removes duplicate rows from the Employee table by keeping only the row with the minimum row ID for each group of duplicate record
 
 DELETE FROM Employee
 WHERE rowid NOT IN (
@@ -8,6 +9,7 @@ WHERE rowid NOT IN (
 );
 
 -- Find rows with missing values
+-- This query retrieves all rows from the Employee table that have any missing values in any of the specified columns.
 
 SELECT *
 FROM Employee
@@ -22,6 +24,7 @@ WHERE Education IS NULL
    OR LeaveOrNot IS NULL;
 
 -- Remove rows with missing values
+-- This query deletes all rows from the Employee table that have any missing values in any of the specified columns.
 
 DELETE FROM Employee
 WHERE Education IS NULL
@@ -35,6 +38,7 @@ WHERE Education IS NULL
    OR LeaveOrNot IS NULL;
 
 -- Replace missing values with a default value
+-- These queries replace missing values in each specified column with a default value, such as 'Unknown' for text columns or 0 for numeric columns.
 
 UPDATE Employee
 SET Education = 'Unknown'
@@ -73,11 +77,13 @@ SET LeaveOrNot = 0
 WHERE LeaveOrNot IS NULL;
 
 -- Standardize text data (e.g., make all city names lowercase)
+-- This query converts all values in the City column to lowercase to ensure consistency in text data.
 
 UPDATE Employee
 SET City = LOWER(City);
 
 -- Remove leading and trailing spaces from text data
+-- This query removes any leading or trailing spaces from the specified text columns to ensure data is clean and uniform.
 
 UPDATE Employee
 SET City = TRIM(City),
@@ -86,11 +92,13 @@ SET City = TRIM(City),
     EverBenched = TRIM(EverBenched);
 
 -- Remove non-numeric characters from a numeric column (e.g., Age)
+-- This query removes any non-numeric characters from the Age column to ensure that it contains only numeric values.
 
 UPDATE Employee
 SET Age = REGEXP_REPLACE(Age, '[^0-9]', '');
 
 -- Convert data types (e.g., convert Age to INTEGER)
+-- This query changes the data type of the Age column to INTEGER to ensure that it is stored as a numeric value in the database.
 
 ALTER TABLE Employee
 ALTER COLUMN Age SET DATA TYPE INTEGER;
