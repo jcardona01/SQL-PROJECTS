@@ -7,4 +7,5 @@
 ### *Basic SQL queries
 
 ## Kaggle Public data set was use [Employee.csv](https://www.kaggle.com/datasets/tawfikelmetwally/employee-dataset)
-### *Basic SQL Data Cleaning
+### *SQL Data Cleaning
+### *SQL Data Analysis
