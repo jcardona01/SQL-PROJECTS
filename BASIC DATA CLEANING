@@ -1,13 +1,97 @@
--- Finding Rows with Missing Values
+--Remove duplicate rows
+
+DELETE FROM Employee
+WHERE rowid NOT IN (
+    SELECT MIN(rowid)
+    FROM Employee
+    GROUP BY Education, JoiningYear, City, PaymentTier, Age, Gender, EverBenched, ExperienceInCurrentDomain, LeaveOrNot
+);
+
+-- Find rows with missing values
 
 SELECT *
-FROM EmployeeDemographics
+FROM Employee
+WHERE Education IS NULL
+   OR JoiningYear IS NULL
+   OR City IS NULL
+   OR PaymentTier IS NULL
+   OR Age IS NULL
+   OR Gender IS NULL
+   OR EverBenched IS NULL
+   OR ExperienceInCurrentDomain IS NULL
+   OR LeaveOrNot IS NULL;
+
+-- Remove rows with missing values
+
+DELETE FROM Employee
+WHERE Education IS NULL
+   OR JoiningYear IS NULL
+   OR City IS NULL
+   OR PaymentTier IS NULL
+   OR Age IS NULL
+   OR Gender IS NULL
+   OR EverBenched IS NULL
+   OR ExperienceInCurrentDomain IS NULL
+   OR LeaveOrNot IS NULL;
+
+-- Replace missing values with a default value
+
+UPDATE Employee
+SET Education = 'Unknown'
+WHERE Education IS NULL;
+
+UPDATE Employee
+SET JoiningYear = 0
+WHERE JoiningYear IS NULL;
+
+UPDATE Employee
+SET City = 'Unknown'
+WHERE City IS NULL;
+
+UPDATE Employee
+SET PaymentTier = 1
+WHERE PaymentTier IS NULL;
+
+UPDATE Employee
+SET Age = 0
 WHERE Age IS NULL;
 
--- Replace NULL values with a desired value
+UPDATE Employee
+SET Gender = 'Unknown'
+WHERE Gender IS NULL;
 
-UPDATE EmployeeDemographics
-SET Age = 'n/a'
-WHERE Age IS NULL;
+UPDATE Employee
+SET EverBenched = 'No'
+WHERE EverBenched IS NULL;
 
--
+UPDATE Employee
+SET ExperienceInCurrentDomain = 0
+WHERE ExperienceInCurrentDomain IS NULL;
+
+UPDATE Employee
+SET LeaveOrNot = 0
+WHERE LeaveOrNot IS NULL;
+
+-- Standardize text data (e.g., make all city names lowercase)
+
+UPDATE Employee
+
+SET City = LOWER(City);
+6. Remove leading and trailing spaces from text data
+sql
+Copy code
+UPDATE Employee
+SET City = TRIM(City),
+    Education = TRIM(Education),
+    Gender = TRIM(Gender),
+    EverBenched = TRIM(EverBenched);
+7. Remove non-numeric characters from a numeric column (e.g., Age)
+sql
+Copy code
+UPDATE Employee
+SET Age = REGEXP_REPLACE(Age, '[^0-9]', '');
+8. Convert data types (e.g., convert Age to INTEGER)
+sql
+Copy code
+ALTER TABLE Employee
+ALTER COLUMN Age SET DATA TYPE INTEGER;
