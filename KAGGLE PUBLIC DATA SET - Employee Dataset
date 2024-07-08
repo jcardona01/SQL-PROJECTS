@@ -1,0 +1,58 @@
+--Retrieve all records from the dataset
+
+SELECT * FROM Employee;
+
+--Retrieve employees who have left the company (LeaveOrNot = 1)
+
+SELECT *
+FROM Employee
+WHERE LeaveOrNot = 1;
+
+-- Retrieve the average age of employees in each city
+
+SELECT City, AVG(Age) AS AverageAge
+FROM Employee
+GROUP BY City;
+
+-- Count the number of employees by education level
+
+SELECT Education, COUNT(*) AS NumberOfEmployees
+FROM Employee
+GROUP BY Education;
+
+--Retrieve employees who have been benched (EverBenched = 'Yes')
+
+SELECT *
+FROM Employee
+WHERE EverBenched = 'Yes';
+
+-- Retrieve the number of employees in each payment tier
+
+SELECT PaymentTier, COUNT(*) AS NumberOfEmployees
+FROM Employee
+GROUP BY PaymentTier;
+
+-- Retrieve employees who have more than 5 years of experience in their current domain
+
+SELECT *
+FROM Employee
+WHERE ExperienceInCurrentDomain > 5;
+
+--Retrieve the average years of experience in the current domain for employees in each education level
+
+SELECT Education, AVG(ExperienceInCurrentDomain) AS AverageExperience
+FROM Employee
+GROUP BY Education;
+
+--Retrieve the top 5 youngest employees
+
+SELECT *
+FROM Employee
+ORDER BY Age ASC
+LIMIT 5;
+
+-- Retrieve the employees who joined in or after 2015
+
+SELECT *
+FROM Employee
+WHERE JoiningYear >= 2015;
