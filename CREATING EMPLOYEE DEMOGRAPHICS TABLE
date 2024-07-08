@@ -1,6 +1,7 @@
-CREATE TABLE EmployeeDemographics
-(EmployeeID int,
-FirstName varchar(50),
+---- Create the EmployeeDemographics table
+CREATE TABLE EmployeeDemographics (
+EmployeeID int, -- The EmployeeID column is of type "int" means An integer a whole number (not a fractional number) that can be positive, negative, or zero.
+FirstName varchar(50), -- columns are of type varchar(50), allowing up to 50 characters.
 LastName varchar(50),
 Age int,
 Gender varchar(50)
