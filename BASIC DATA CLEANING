@@ -75,23 +75,22 @@ WHERE LeaveOrNot IS NULL;
 -- Standardize text data (e.g., make all city names lowercase)
 
 UPDATE Employee
-
 SET City = LOWER(City);
-6. Remove leading and trailing spaces from text data
-sql
-Copy code
+
+-- Remove leading and trailing spaces from text data
+
 UPDATE Employee
 SET City = TRIM(City),
     Education = TRIM(Education),
     Gender = TRIM(Gender),
     EverBenched = TRIM(EverBenched);
-7. Remove non-numeric characters from a numeric column (e.g., Age)
-sql
-Copy code
+
+-- Remove non-numeric characters from a numeric column (e.g., Age)
+
 UPDATE Employee
 SET Age = REGEXP_REPLACE(Age, '[^0-9]', '');
-8. Convert data types (e.g., convert Age to INTEGER)
-sql
-Copy code
+
+-- Convert data types (e.g., convert Age to INTEGER)
+
 ALTER TABLE Employee
 ALTER COLUMN Age SET DATA TYPE INTEGER;
