@@ -1,1 +1,15 @@
+SELECT *
+FROM EmployeeDemographics
 
+-- This query retrieves all columns and rows from the EmployeeDemographics table.
+-- The SELECT * statement retrieves all columns (*) and all rows from the EmployeeDemographics table.
+
+SELECT FirstName
+FROM EmployeeDemographics
+
+-- The SELECT FirstName statement retrieves only the FirstName column from the EmployeeDemographics table.
+
+SELECT FirstName , Lastname
+FROM EmployeeDemographics
+
+-- You can select spesific column for basic filtration and sorting
