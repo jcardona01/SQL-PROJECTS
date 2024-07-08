@@ -1,4 +1,4 @@
---Remove duplicate rows
+--Remove duplicate rows. This query removes duplicate rows from the Employee table by keeping only the row with the minimum row ID for each group of duplicate record
 
 DELETE FROM Employee
 WHERE rowid NOT IN (
