@@ -1,4 +1,4 @@
---Remove duplicate rows. (Not availabe for Employee.csv data set)
+--Remove duplicate rows. (Not availabe for Employee.csv data set proceed to 2nd step)
 --This query removes duplicate rows from the Employee table by keeping only the row with the minimum row ID for each group of duplicate record
 
 DELETE FROM Employee
