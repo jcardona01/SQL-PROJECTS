@@ -22,14 +22,6 @@ GROUP BY City, Gender;
 
 --This query counts the number of employees for each combination of city and gender, grouping the results by both city and gender.
 
---Calculate the average experience in the current domain for employees who have been benched
-
-SELECT AVG(ExperienceInCurrentDomain) AS AverageExperience
-FROM Employee
-WHERE EverBenched = 'Yes';
-
---This query calculates the average experience in the current domain for employees who have been benched.
-
 --Retrieve the distribution of education levels among employees
 
 SELECT Education, COUNT(*) AS NumberOfEmployees
