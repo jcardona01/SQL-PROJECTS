@@ -4,7 +4,7 @@ SELECT City, COUNT(*) AS NumberOfEmployees
 FROM Employee
 GROUP BY City;
 
--- This query counts the number of employees in each city and groups the results by city name.
+
 
 --Find the average age of employees in each payment tier
 
@@ -12,7 +12,7 @@ SELECT PaymentTier, AVG(Age) AS AverageAge
 FROM Employee
 GROUP BY PaymentTier;
 
---This query calculates the average age of employees within each payment tier and groups the results by payment tier.
+
 
 --Count the number of employees by gender and city
 
@@ -20,7 +20,7 @@ SELECT City, Gender, COUNT(*) AS NumberOfEmployees
 FROM Employee
 GROUP BY City, Gender;
 
---This query counts the number of employees for each combination of city and gender, grouping the results by both city and gender.
+
 
 --Retrieve the distribution of education levels among employees
 
@@ -28,7 +28,7 @@ SELECT Education, COUNT(*) AS NumberOfEmployees
 FROM Employee
 GROUP BY Education;
 
---This query counts the number of employees at each education level and groups the results by education level.
+
 
 --Calculate the percentage of employees who have left the company
 
@@ -36,7 +36,7 @@ SELECT (COUNT(*) * 100.0 / (SELECT COUNT(*) FROM Employee)) AS PercentageLeft
 FROM Employee
 WHERE LeaveOrNot = 1;
 
---This query calculates the percentage of employees who have left the company by dividing the number of employees who have left by the total number of employees and multiplying by 100.
+
 
 --Find the maximum and minimum age of employees in each city
 
@@ -44,7 +44,7 @@ SELECT City, MAX(Age) AS MaxAge, MIN(Age) AS MinAge
 FROM Employee
 GROUP BY City;
 
---This query finds the maximum and minimum age of employees in each city and groups the results by city.
+
 
 --Calculate the average age of employees by education level
 
@@ -52,7 +52,7 @@ SELECT Education, AVG(Age) AS AverageAge
 FROM Employee
 GROUP BY Education;
 
---This query calculates the average age of employees at each education level and groups the results by education level.
+
 
 --Count the number of employees who joined in each year
 
@@ -60,7 +60,7 @@ SELECT JoiningYear, COUNT(*) AS NumberOfEmployees
 FROM Employee
 GROUP BY JoiningYear;
 
---This query counts the number of employees who joined the company in each year and groups the results by joining year.
+
 
 --Find the number of employees in each payment tier by education level
 
@@ -68,4 +68,3 @@ SELECT Education, PaymentTier, COUNT(*) AS NumberOfEmployees
 FROM Employee
 GROUP BY Education, PaymentTier;
 
---This query counts the number of employees at each combination of education level and payment tier, grouping the results by both education level and payment tier.
