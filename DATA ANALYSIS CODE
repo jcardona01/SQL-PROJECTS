@@ -4,12 +4,6 @@ SELECT City, COUNT(*) AS NumberOfEmployees
 FROM Employee
 GROUP BY City;
 
-|     City      | NumberOfEmployees |
-|---------------|-------------------|
-| Bangalore     | 200               |
-| Pune          | 150               |
-| New Delhi     | 100               |
-
 
 
 --Find the average age of employees in each payment tier
