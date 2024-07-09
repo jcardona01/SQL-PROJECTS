@@ -8,4 +8,5 @@
 
 ## Kaggle Public data set was use [Employee.csv](https://www.kaggle.com/datasets/tawfikelmetwally/employee-dataset)
 ### *SQL Data Cleaning
-### *SQL Data Analysis
+### *SQL Data Analysis CODE
+### *SQL Data Analysis RESULT
